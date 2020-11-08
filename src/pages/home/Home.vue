@@ -1,5 +1,6 @@
 <template>
-  <div>潮流街APP 
+  <div style="text-align:center">
+    潮流街APP 
   </div>
   
 </template>

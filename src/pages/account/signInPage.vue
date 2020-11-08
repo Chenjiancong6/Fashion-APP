@@ -92,6 +92,10 @@ export default {
         .login({ username: this.username, password: this.password })
         .then(res => {})
         .catch(err => {});
+         //获取账号和密码放在本地缓存
+      localStorage.setItem("admin", this.username);
+      localStorage.setItem("password", this.password);
+       this.$router.push("/home");
       //清空输入框
       this.username = "";
       this.password = "";
@@ -111,8 +115,10 @@ export default {
           //phone: this.phone,
           password: this.password
         })
-        .then(res => {})
+        .then(res => {
+        })
         .catch(err => {});
+     
       //清空输入框
       this.username = "";
       this.password = "";

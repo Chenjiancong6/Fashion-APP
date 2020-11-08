@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from "vue-router";
+import {
+    Toast
+} from 'vant'
 //使用路由
 Vue.use(VueRouter);
 
@@ -11,7 +14,7 @@ const home = () => import("@/pages/home/Home") //首页
 
 const routes = [{
         path: '/',
-        redirect: '/signInPage' //重定向， 默认显示
+        redirect: '/home' //重定向， 默认显示
     },
     {
         name: "signIn",
@@ -19,7 +22,6 @@ const routes = [{
         component: signIn,
         meta: {
             title: "账号登录",
-            auth: true
         }
     },
     {
@@ -28,21 +30,47 @@ const routes = [{
         component: home,
         meta: {
             title: '首页',
+            //登录权限
+            auth: true
         }
     }
 ]
 
 //挂载router路由
 const router = new VueRouter({
-    mode: "hash", //当 URL 改变时，页面不会重新加载
+    mode: "hash", //hash：当 URL 改变时，页面不会重新加载
     base: process.env.BASE_URL,
     routes,
 });
 
-//动态显示每个页面的标题（全局导航守卫）
+//to跳转的页面
+//from跳转前的页面
+//next跳转页面的操作
 router.beforeEach((to, from, next) => {
-    document.title = to.matched[0].meta.title;
-    next();
+    // document.title = to.matched[0].meta.title;
+    // next();
+//    let win = window.sessionStorage
+//    console.log(win.getItem("username"), "账号");
+    const auth=to.meta && to.meta.auth //将要跳转的页面
+    if(auth){
+        //先判断是否有登录缓存
+        let win = window.localStorage
+        console.log(win.getItem("username"), "账号--");
+
+        if (win.getItem("username") == 'admin' && win.getItem("password") == '123456') {
+            //符合继续进行
+            next();
+        } else {
+            //不符合跳转登录界面
+             Toast("请先登录.")
+            next({
+                path: '/signInPage'
+            })
+        }
+    } else {
+        //Toast("请先登录.")
+        next();
+    }
 });
 
 // 修改路由push方法,阻止重复点击报错
