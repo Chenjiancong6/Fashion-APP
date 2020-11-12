@@ -85,29 +85,29 @@ export default {
     //登录
     handlerSignInClick() {
       if (!this.username || !this.password) {
-        Toast.fail("请输入用户名和密码.");
+        Toast.fail("请输入用户名和密码");
         return;
       }
       this.$cloudApi
         .login({ username: this.username, password: this.password })
-        .then(res => {})
-        .catch(err => {});
+        .then(res => {
+          console.log(res,555);       
+        })
+        .catch(err => { console.log(res,444);});
          //获取账号和密码放在本地缓存
-      localStorage.setItem("admin", this.username);
-      localStorage.setItem("password", this.password);
+      sessionStorage.setItem("username", this.username);
+      sessionStorage.setItem("password", this.password);
        this.$router.push("/home");
       //清空输入框
       this.username = "";
       this.password = "";
     },
-
     //注册
     handlerRegisterClick() {
       if (!this.username || !this.password) {
         Toast.fail("请填写正确的格式");
         return;
       }
-
       //知晓云Api注册接口
       this.$cloudApi
         .register({
@@ -123,13 +123,11 @@ export default {
       this.username = "";
       this.password = "";
     },
-
     //切换注册
     SwitchLogin() {
       this.switchRegister = true;
       this.switchLogin = false;
     },
-
     //切换登录
     SwitchRegister() {
       this.switchRegister = false;

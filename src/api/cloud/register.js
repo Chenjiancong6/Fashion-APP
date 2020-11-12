@@ -12,10 +12,10 @@
      return new Promise((resolve, reject) => {
          BaaS.auth.register(form).then(user => {
              resolve(user)
-             Toast("注册成功.")
+             Toast("注册成功")
          }).catch(err => {
              reject(err)
-             Toast("注册失败.")
+             Toast("注册失败")
          })
      })
 

@@ -9,6 +9,9 @@ Vue.use(VueRouter);
 //懒加载,定义路由映射,导入
 const signIn = () => import("@/pages/account/signInPage") //登录
 const home = () => import("@/pages/home/Home") //首页
+const category = () => import("@/pages/category/Category")
+const shopCart = () => import("@/pages/shopCart/ShopCart")
+const profile = () => import("@/pages/profile/Profile")
 
 
 
@@ -18,7 +21,7 @@ const routes = [{
     },
     {
         name: "signIn",
-        path: "/signInPage",
+        path: "/signIn",
         component: signIn,
         meta: {
             title: "账号登录",
@@ -33,7 +36,37 @@ const routes = [{
             //登录权限
             auth: true
         }
-    }
+    },
+     {
+         name: 'category',
+         path: '/category',
+         component: category,
+         meta: {
+             title: '分类',
+             //登录权限
+             auth: true
+         }
+     },
+      {
+          name: 'shopCart',
+          path: '/shopCart',
+          component: shopCart,
+          meta: {
+              title: '购物车',
+              //登录权限
+              auth: true
+          }
+      },
+       {
+           name: 'profile',
+           path: '/profile',
+           component: profile,
+           meta: {
+               title: '我的',
+               //登录权限
+               auth: true
+           }
+       },
 ]
 
 //挂载router路由
@@ -47,14 +80,12 @@ const router = new VueRouter({
 //from跳转前的页面
 //next跳转页面的操作
 router.beforeEach((to, from, next) => {
-    // document.title = to.matched[0].meta.title;
-    // next();
-//    let win = window.sessionStorage
-//    console.log(win.getItem("username"), "账号");
-    const auth=to.meta && to.meta.auth //将要跳转的页面
-    if(auth){
+    //    let win = window.sessionStorage
+    //    console.log(win.getItem("username"), "账号");
+    const auth = to.meta && to.meta.auth //将要跳转的页面
+    if (auth) {
         //先判断是否有登录缓存
-        let win = window.localStorage
+        let win = window.sessionStorage
         console.log(win.getItem("username"), "账号--");
 
         if (win.getItem("username") == 'admin' && win.getItem("password") == '123456') {
@@ -62,9 +93,9 @@ router.beforeEach((to, from, next) => {
             next();
         } else {
             //不符合跳转登录界面
-             Toast("请先登录.")
+            Toast("请先登录")
             next({
-                path: '/signInPage'
+                path: '/signIn'
             })
         }
     } else {

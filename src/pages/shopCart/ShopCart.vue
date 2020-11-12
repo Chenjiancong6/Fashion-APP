@@ -1,22 +1,19 @@
 <template>
- <div id="home">
+  <div id="ShopCart">
    <nav-bar>
-     <div slot="center">潮流街APP</div>
+     <div slot="center">购物车</div>
    </nav-bar>
  </div>
-  
 </template>
 
 <script>
 import NavBar from "@/components/NavBar"
 export default {
-     name:"Home",
-     components:{
-      NavBar
-     }
+   name:'ShopCart',
+   components:{NavBar}
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

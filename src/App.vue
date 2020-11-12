@@ -4,16 +4,17 @@
   <keep-alive exclude="">
       <router-view></router-view>
     </keep-alive>
+    <tab-bar></tab-bar>
   </div>
 </template>
 
 <script>
 
-
+import TabBar from "@/components/TabBar"  //底部标签栏
 export default {
   name: 'App',
   components: {
-   
+     TabBar
   }
 }
 </script>

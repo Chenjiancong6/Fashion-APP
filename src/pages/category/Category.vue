@@ -1,22 +1,19 @@
 <template>
- <div id="home">
+  <div id="Category">
    <nav-bar>
-     <div slot="center">潮流街APP</div>
+     <div slot="center">分类</div>
    </nav-bar>
  </div>
-  
 </template>
 
 <script>
 import NavBar from "@/components/NavBar"
 export default {
-     name:"Home",
-     components:{
-      NavBar
-     }
+   name:'Category',
+   components:{NavBar}
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>
