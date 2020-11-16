@@ -3,6 +3,7 @@
    <nav-bar>
      <div slot="center">潮流街APP</div>
    </nav-bar>
+   
  </div>
   
 </template>

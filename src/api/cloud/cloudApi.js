@@ -4,8 +4,11 @@
 
 import register from './register'
 import login from './login'
+import request from '../request'
 
 export default {
     register,
-    login
+    request,
+    login,
+
 }
