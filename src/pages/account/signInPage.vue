@@ -91,6 +91,7 @@ export default {
       }
       this.$cloudApi.login({ username: this.username, password: this.password })
         .then(res => {
+         
           console.log(res, 555);
         }).catch(err => {
           console.log(res, 444);
@@ -103,70 +104,6 @@ export default {
       this.username = "";
       this.password = "";
 
-      //获取文件
-      //   let MyFile = new BaaS.File()
-      //   MyFile.get('5f93d2fc172ddb1dc6f96500').then(res=>{
-      //     console.log(res.data.path,"文件");
-      //      table(res.data.path)
-      //   })
-
-      // ///表数据测试
-      // function table(imgs){
-      //   let tableName = "try_table";
-
-      // let MyTableObject = new BaaS.TableObject(tableName);
-
-      // let product = MyTableObject.create();
-
-      // let data = {
-      //   id:66,
-      //   img:imgs,
-      // };
-
-      // product
-      //   .set(data)
-      //   .save()
-      //   .then(res => {
-      //     console.log(res, "我创建的数据");
-      //   });
-      // }
-
-      //查询文件分类
-      //  let MyFile = new BaaS.File()
-      // // 查找所有文件
-      // MyFile.find()
-      // let query = new BaaS.Query()
-      // // 查询某一文件分类下的所有文件
-      // query.compare('category_name', '=', '首页')
-      // // 查询文件名包含指定字符串的文件
-      // // query.contains('name', substr)
-      // MyFile.setQuery(query).find().then(res=>{
-      //   console.log(res,"查询文件分类");
-
-      //})
-
-      //更新数据
-      //   let tableName = "try_table";
-      // let MyTableObject = new BaaS.TableObject(tableName)
-      // let product = MyTableObject.getWithoutData('5fae3ffbaea0f3426a071a66')
-      //   product.set('img', '更新了数据')
-      //     product.update().then(res=>{
-      //    console.log(res,"更新数据");
-      //     })
-
-      //删除数据
-      // let tableName = "try_table";
-      // let recordID = "5fae3ffbaea0f3426a071a66";
-
-      // let Product = new BaaS.TableObject(tableName);
-      // Product.delete(recordID).then(
-      //   res => {
-      //     console.log(res, "删除数据");
-      //   },
-      //   err => {
-      //     // err
-      //   }
-      // );
     },
     //注册
     handlerRegisterClick() {
