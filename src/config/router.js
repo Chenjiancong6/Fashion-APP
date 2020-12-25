@@ -80,8 +80,6 @@ const router = new VueRouter({
 //from跳转前的页面
 //next跳转页面的操作
 router.beforeEach((to, from, next) => {
-    //    let win = window.sessionStorage
-    //    console.log(win.getItem("username"), "账号");
     const auth = to.meta && to.meta.auth //将要跳转的页面
     if (auth) {
         console.log(111111111111)
