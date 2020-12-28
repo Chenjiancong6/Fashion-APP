@@ -82,28 +82,21 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     const auth = to.meta && to.meta.auth //将要跳转的页面
     if (auth) {
-        console.log(111111111111)
         //先判断是否有登录缓存
         let win = window.sessionStorage
-        console.log(win.getItem("username"), "账号--");
 
-        if (win.getItem("username") == 'admin' && win.getItem("password") == '123456') {
+        if (win.getItem("nickname")) {
             //符合继续进行
-            next(   )
+            next()
            // next({path:'/'});  //不起作用？
-            console.log(222222)
         } else {
-            console.log(3333333)
             //不符合跳转登录界面
             Toast("请先登录")
-            next({
-                path: '/signIn'
-            })
+            next({path: '/signIn'})
         }
     } else {
         //Toast("请先登录.")
         next();
-        console.log(444444444)
     }
 });
 

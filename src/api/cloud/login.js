@@ -9,6 +9,8 @@ function login(form) {
   return new Promise((resolve, reject) => {
     BaaS.auth.login(form).then((user) => {
       //Toast("登录成功.")
+      sessionStorage.setItem("nickname", user.nickname) //登录名
+      sessionStorage.setItem("avatar", user.avatar) //登录头像
       Notify({
         type: "primary",
         message: "登录成功",
