@@ -84,8 +84,7 @@ router.beforeEach((to, from, next) => {
     if (auth) {
         //先判断是否有登录缓存
         let win = window.sessionStorage
-
-        if (win.getItem("nickname")) {
+        if (win.getItem("token")) {
             //符合继续进行
             next()
            // next({path:'/'});  //不起作用？
@@ -95,7 +94,6 @@ router.beforeEach((to, from, next) => {
             next({path: '/signIn'})
         }
     } else {
-        //Toast("请先登录.")
         next();
     }
 });

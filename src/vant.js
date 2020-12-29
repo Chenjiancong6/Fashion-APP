@@ -49,6 +49,8 @@ import {
     Checkbox,
     CheckboxGroup,
     DatetimePicker,
+    Swipe,
+    SwipeItem
 } from "vant";
 
 Vue.use(TreeSelect);
@@ -95,3 +97,5 @@ Vue.use(Uploader);
 Vue.use(PullRefresh);
 Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
+Vue.use(Swipe);
+Vue.use(SwipeItem);

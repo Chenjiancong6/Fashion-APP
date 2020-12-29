@@ -4,7 +4,7 @@
   <keep-alive exclude="">
       <router-view></router-view>
     </keep-alive>
-    <tab-bar></tab-bar>
+    <tab-bar :class="{actives:isActive}"></tab-bar>
   </div>
 </template>
 
@@ -15,10 +15,13 @@ export default {
   name: 'App',
   components: {
      TabBar
-  }
+  }, 
 }
 </script>
 
 <style scoped>
 @import "assets/css/base.css";
+.actives{
+  display: none;
+}
 </style>

@@ -11,6 +11,7 @@ function login(form) {
       //Toast("登录成功.")
       sessionStorage.setItem("nickname", user.nickname) //登录名
       sessionStorage.setItem("avatar", user.avatar) //登录头像
+      sessionStorage.setItem("token",user)  //登录凭证
       Notify({
         type: "primary",
         message: "登录成功",

@@ -93,7 +93,7 @@ export default {
       //获取账号和密码放在本地缓存
       sessionStorage.setItem("username", this.username);
       sessionStorage.setItem("password", this.password);
-      setTimeout(()=>{this.$router.replace("/home");},2000) 
+      setTimeout(()=>{this.$router.replace("/home");},3000) 
       //清空输入框
       this.username = "";
       this.password = "";

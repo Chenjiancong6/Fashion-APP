@@ -26,6 +26,7 @@ export default {
   line-height: 44px;
   text-align: center;
   background-color: rgb(26, 228, 235);
+  /* background-color: #39a9ed; */
   color: aliceblue;
 }
 .left {

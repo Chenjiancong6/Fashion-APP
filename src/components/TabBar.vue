@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
    <van-tabbar v-model="active" @change="onChange">
   <van-tabbar-item to="/home" icon="home-o">首页</van-tabbar-item>
   <van-tabbar-item to="/category" icon="search">分类</van-tabbar-item>
@@ -15,17 +15,33 @@ export default {
   components: {},
   data(){
       return{
-        active:0
+        active:0,
       }
   },
   methods:{
       onChange(index){
           //this.$router.push(to)
           this.active=index
-      }
-  }
+      },
+      // showTabBar(){
+      //    let win = window.sessionStorage;
+      //   if(win.getItem("nickname")){
+      //       this.isActive=false
+      //       console.log(1111);
+            
+      //   }else{
+      //     this.isActive=true
+      //     console.log(2222);
+          
+      //   }
+      // }
+  },
+  // created(){
+  //   this.showTabBar()
+  // }
 };
 </script>
 
 <style>
+
 </style>
