@@ -1,13 +1,17 @@
 <template>
-  
+  <div id="detail">
+    
+  </div>
 </template>
 
 <script>
-export default {
 
-}
+export default {
+  components: {
+    
+  }
+};
 </script>
 
 <style>
-
 </style>

@@ -152,4 +152,7 @@ export default {
     color: rgb(19, 130, 233);
   }
 }
+.van-tabbar--fixed{
+  display: none;
+}
 </style>

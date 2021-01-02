@@ -12,6 +12,7 @@ const home = () => import("@/pages/home/Home") //首页
 const category = () => import("@/pages/category/Category")
 const shopCart = () => import("@/pages/shopCart/ShopCart")
 const profile = () => import("@/pages/profile/Profile")
+const tabBar =()=>import("@/components/TabBar")  //底部导航栏
 
 
 
@@ -20,8 +21,18 @@ const routes = [{
         redirect: '/home' //重定向， 默认显示
     },
     {
-        name: "signIn",
-        path: "/signIn",
+        name: "tabBar",
+        path: "/tabBar",
+        component: tabBar,
+        meta: {
+            title: "底部导航栏",
+            //登录权限
+            auth: true
+        }
+    },
+    {
+        name: "login",
+        path: "/login",
         component: signIn,
         meta: {
             title: "账号登录",
@@ -91,7 +102,7 @@ router.beforeEach((to, from, next) => {
         } else {
             //不符合跳转登录界面
             Toast("请先登录")
-            next({path: '/signIn'})
+            next({path: '/login'})
         }
     } else {
         next();

@@ -4,7 +4,7 @@
   <keep-alive exclude="">
       <router-view></router-view>
     </keep-alive>
-    <tab-bar :class="{actives:isActive}"></tab-bar>
+    <tab-bar></tab-bar>
   </div>
 </template>
 

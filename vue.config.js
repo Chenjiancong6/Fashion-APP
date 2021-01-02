@@ -3,13 +3,13 @@ const path = require("path")
 module.exports = {
     // lintOnSave: false,
     //  publicPath: '/FashionAPP',
-    // publicPath: './',
+        publicPath: './',
     // outputDir: 'dist',
     // assetsDir: 'static',
     // lintOnSave: true,
     // productionSourceMap: false,
        lintOnSave: false,
-         publicPath: '/FashionAPP',
+        // publicPath: '/FashionAPP',
          assetsDir: 'static',
          productionSourceMap: false,
     configureWebpack: {

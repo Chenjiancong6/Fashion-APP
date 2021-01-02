@@ -49,7 +49,7 @@ export default {
   color: white;
   font-size: 20px;
   text-align: center;
-
+  height: 20%;
 }
 .my-swipe img{
   width:100%;
