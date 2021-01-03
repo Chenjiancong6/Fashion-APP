@@ -1,5 +1,6 @@
 import BaaS from "./init";
 import { Toast, Notify } from "vant";
+import store from "@/store/index";  //引入vuex
 
 /**
  * @param {phone:"",password:""}   //登录参数
@@ -8,15 +9,14 @@ import { Toast, Notify } from "vant";
 function login(form) {
   return new Promise((resolve, reject) => {
     BaaS.auth.login(form).then((user) => {
-      //Toast("登录成功.")
-      sessionStorage.setItem("nickname", user.nickname) //登录名
-      sessionStorage.setItem("avatar", user.avatar) //登录头像
-      sessionStorage.setItem("token",user)  //登录凭证
-      Notify({
+      store.commit("setNickName", user.nickname)//登录名
+      store.commit("setAvatar", user.avatar)//登录头像
+      store.commit('setUser', user._username)  //把获取的token登录凭证放到vuex中存储
+     Notify({
         type: "primary",
         message: "登录成功",
       });
-      //console.log(user.id, 66);
+     
     }).catch((err) => {
       Notify({
         type: "primary",

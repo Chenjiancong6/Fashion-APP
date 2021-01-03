@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from "vue-router";
+import { setItem, getItem } from "@/components/storage" //封装缓存的方法
 import {
     Toast
 } from 'vant'
@@ -12,23 +13,12 @@ const home = () => import("@/pages/home/Home") //首页
 const category = () => import("@/pages/category/Category")
 const shopCart = () => import("@/pages/shopCart/ShopCart")
 const profile = () => import("@/pages/profile/Profile")
-const tabBar =()=>import("@/components/TabBar")  //底部导航栏
 
 
 
 const routes = [{
         path: '/',
         redirect: '/home' //重定向， 默认显示
-    },
-    {
-        name: "tabBar",
-        path: "/tabBar",
-        component: tabBar,
-        meta: {
-            title: "底部导航栏",
-            //登录权限
-            auth: true
-        }
     },
     {
         name: "login",
@@ -94,8 +84,7 @@ router.beforeEach((to, from, next) => {
     const auth = to.meta && to.meta.auth //将要跳转的页面
     if (auth) {
         //先判断是否有登录缓存
-        let win = window.sessionStorage
-        if (win.getItem("token")) {
+        if (getItem("user")) {
             //符合继续进行
             next()
            // next({path:'/'});  //不起作用？

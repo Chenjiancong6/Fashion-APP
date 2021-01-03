@@ -89,10 +89,12 @@ export default {
         Toast.fail("请输入用户名和密码");
         return;
       }
-      this.$cloudApi.login({ username: this.username, password: this.password })
+      this.$cloudApi.login({ username: this.username, password: this.password }).then(data=>{
+        console.log(data,222); 
+      })
       //获取账号和密码放在本地缓存
-      sessionStorage.setItem("username", this.username);
-      sessionStorage.setItem("password", this.password);
+      // sessionStorage.setItem("username", this.username);
+      // sessionStorage.setItem("password", this.password);
       setTimeout(()=>{this.$router.replace("/home");},3000) 
       //清空输入框
       this.username = "";
@@ -152,7 +154,5 @@ export default {
     color: rgb(19, 130, 233);
   }
 }
-.van-tabbar--fixed{
-  display: none;
-}
+
 </style>

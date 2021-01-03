@@ -4,8 +4,9 @@
   <keep-alive exclude="">
       <router-view></router-view>
     </keep-alive>
-    <tab-bar></tab-bar>
-  </div>
+ <tab-bar></tab-bar>
+  </div> 
+ 
 </template>
 
 <script>
