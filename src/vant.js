@@ -50,9 +50,13 @@ import {
     CheckboxGroup,
     DatetimePicker,
     Swipe,
-    SwipeItem
+    SwipeItem,
+    Image as VanImage,
+    Card
 } from "vant";
 
+Vue.use(Card);
+Vue.use(VanImage);
 Vue.use(TreeSelect);
 Vue.use(DatetimePicker);
 Vue.use(NumberKeyboard);

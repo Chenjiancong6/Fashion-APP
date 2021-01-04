@@ -9,16 +9,25 @@
         <img :src="item.path" alt="无法显示" srcset />
       </van-swipe-item>
     </van-swipe>
+    <!-- Grid宫格 -->
+    <grid></grid>
+    <!--tab标签 -->
+     <tab-bar @tabClick="tabClick" :titles="['流行', '新款', '精选']"></tab-bar>
+     <!--商品列表-->
+     <goods-list></goods-list>
   </div>
 </template>
 
 <script>
 import BaaS from "@/api/cloud/init";
 import NavBar from "@/components/NavBar";
+import Grid from "./children/grid"
+import tabBar from "./children/tabBar"
+import goodsList from "./children/GoodsList"
 export default {
   name: "Home",
   components: {
-    NavBar
+    NavBar,Grid,tabBar,goodsList
   },
   data() {
     return {
@@ -26,6 +35,18 @@ export default {
     };
   },
   methods: {
+   //切换tab标签
+   tabClick(index){
+       switch(index){
+         case 0:
+           break;
+           case 1:
+           break;
+           case 2:
+             break;
+       }
+   },
+
     //获取轮播数据
     carousel() {
       let MyFile = new BaaS.File();
