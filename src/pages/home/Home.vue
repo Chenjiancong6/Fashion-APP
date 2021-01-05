@@ -37,6 +37,7 @@ export default {
   methods: {
    //切换tab标签
    tabClick(index){
+     console.log(index,"++");
        switch(index){
          case 0:
            break;
