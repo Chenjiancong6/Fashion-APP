@@ -12,7 +12,7 @@
         <van-tag plain type="danger">标签</van-tag>
       </template>
     </van-card>
-      <van-card
+    <van-card
       num="2"
       price="2.00"
       desc="描述信息"
@@ -21,10 +21,8 @@
     >
       <template #tags>
         <van-tag plain type="danger">标签</van-tag>
-        <van-tag plain type="danger">标签</van-tag>
       </template>
     </van-card>
-    
   </div>
 </template>
 
