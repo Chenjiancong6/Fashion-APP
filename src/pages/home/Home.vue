@@ -56,8 +56,7 @@ export default {
       query.compare("category_name", "=", "home_carousel");
       MyFile.setQuery(query).find().then(res=>{
         this.swiper=res.data.objects;
-      })
-     
+      })  
     }
   },
   created() {
