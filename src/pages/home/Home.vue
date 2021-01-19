@@ -14,7 +14,7 @@
     <!--tab标签 -->
      <tab-bar @tabClick="tabClick" :titles="['流行', '新款', '精选']"></tab-bar>
      <!--商品列表-->
-     <goods-list></goods-list>
+     <goods-list :good-type="goods"></goods-list>
   </div>
 </template>
 
@@ -31,28 +31,42 @@ export default {
   },
   data() {
     return {
-      swiper:[]
+      swiper:[],
+      goodsType:"home_popular",  //切换标签栏
+      goods:[]
     };
   },
   methods: {
    //切换tab标签
    tabClick(index){
-     console.log(index,"++");
        switch(index){
          case 0:
+           this.goodsType="home_popular"   //流行
+            this.getDoodsData(this.goodsType)
            break;
            case 1:
+              this.goodsType="home_news"  //新款
+              this.getDoodsData(this.goodsType)
            break;
            case 2:
+              this.goodsType="home_sell"   //精选
+               this.getDoodsData(this.goodsType)
              break;
        }
    },
+     //获取切换栏商品数据
+     getDoodsData(goodsType){
+        let query = new BaaS.Query()
+        let Product = new BaaS.TableObject(goodsType)
+        Product.setQuery(query).find().then(res => {
+            this.goods=res.data.objects
+        })
+     },
 
     //获取轮播数据
     carousel() {
       let MyFile = new BaaS.File();
-      let query = new BaaS.Query();
-        
+      let query = new BaaS.Query();      
       query.compare("category_name", "=", "home_carousel");
       MyFile.setQuery(query).find().then(res=>{
         this.swiper=res.data.objects;
@@ -62,6 +76,10 @@ export default {
   },
   created() {
     this.carousel(); //轮播函数
+    //请求商品数据
+    this.getDoodsData("home_popular")
+    this.getDoodsData("home_news")
+    this.getDoodsData("home_popular")
   }
 };
 </script>

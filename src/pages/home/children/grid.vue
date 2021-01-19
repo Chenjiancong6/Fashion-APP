@@ -30,8 +30,8 @@ export default {
     })
   },
   created() {
-    this.$cloudApi.queryImage("week_popular"); //赋值指定文件获取图片
-    this.$cloudApi.queryData("week_popular")  //赋值指定数据表获取图片名称
+    this.$cloudApi.queryImage("week_popular","home/getImage"); //赋值指定文件获取图片
+    this.$cloudApi.queryData("week_popular","home/getImageText")  //赋值指定数据表获取图片名称
   }
 };
 </script>
