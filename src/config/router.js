@@ -13,6 +13,7 @@ const home = () => import("@/pages/home/Home") //首页
 const category = () => import("@/pages/category/Category")
 const shopCart = () => import("@/pages/shopCart/ShopCart")
 const profile = () => import("@/pages/profile/Profile")
+const detail=()=>import("@/pages/detail/Detail")  // 详情页
 
 
 
@@ -68,6 +69,16 @@ const routes = [{
                auth: true
            }
        },
+    {
+        name: 'detail',
+        path: '/detail',
+        component: detail,
+        meta: {
+            title: '详情',
+            //登录权限
+            auth: true
+        }
+    },
 ]
 
 //挂载router路由

@@ -137,10 +137,15 @@ export default {
 
 <style lang="less">
 #sign {
+ position: relative;
+  z-index: 9;
+  /* 覆盖掉底部导航栏 */
+  background-color: #fff;
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
   .switch {
     margin-right: 10px;
     margin-bottom: 10px;

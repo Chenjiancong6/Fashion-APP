@@ -20,25 +20,12 @@ export default {
   },
   methods:{
       onChange(index){
-          //this.$router.push(to)
           this.active=index
       },
-      // showTabBar(){
-      //    let win = window.sessionStorage;
-      //   if(win.getItem("nickname")){
-      //       this.isActive=false
-      //       console.log(1111);
-            
-      //   }else{
-      //     this.isActive=true
-      //     console.log(2222);
-          
-      //   }
-      // }
+    
   },
-  // created(){
-  //   this.showTabBar()
-  // }
+  created(){
+  }
 };
 </script>
 
