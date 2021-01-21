@@ -52,7 +52,9 @@ import {
     Swipe,
     SwipeItem,
     Image as VanImage,
-    Card
+    Card,
+    ImagePreview,
+   // Badge,
 } from "vant";
 
 Vue.use(Card);
@@ -103,3 +105,5 @@ Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
 Vue.use(Swipe);
 Vue.use(SwipeItem);
+Vue.use(ImagePreview);
+//Vue.use(Badge);

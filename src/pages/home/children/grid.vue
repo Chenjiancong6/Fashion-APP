@@ -40,7 +40,7 @@ export default {
 .grid-title {
   text-align: center;
   vertical-align: middle;
-  color: black;
+ color: #409EFF;
   font-size: 18px;
   font-weight: bold;
 }

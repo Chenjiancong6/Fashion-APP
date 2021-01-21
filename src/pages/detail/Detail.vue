@@ -1,25 +1,37 @@
 <template>
   <div id="detail">
-     <nav-bar></nav-bar>
+    <nav-bar></nav-bar>
+    <detail-goods-info></detail-goods-info>
   </div>
 </template>
 
 <script>
- import NavBar from "./children/NavBar"
+import BaaS from "@/api/cloud/init";
+import NavBar from "./children/NavBar";
+import DetailGoodsInfo from "./children/DetailGoodsInfo";
+import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
-    name:'detail',
+  name: "detail",
   components: {
-    NavBar
+    NavBar,
+    DetailGoodsInfo
   },
-  data(){
-    return{
-      iid:null
-    }
+  data() {
+    return {
+      id: null
+    };
   },
-  methods:{},
-  created(){
+  methods: {
+  
+  },
+  created() {
     //获取传递过来对应的iid
-    this.iid=this.$route.query.iid
+    //this.id = this.$route.query.id;
+  },
+   computed:{
+    ...mapGetters({
+      tables:'home/tables',  //获取数据表名
+    })
   }
 };
 </script>
@@ -32,5 +44,4 @@ export default {
   background-color: #fff;
   height: 100vh;
 }
-
 </style>

@@ -14,7 +14,7 @@
     <!--tab标签 -->
      <tab-bar @tabClick="tabClick" :titles="['流行', '新款', '精选']"></tab-bar>
      <!--商品列表-->
-     <goods-list :good-type="goods"></goods-list>
+     <goods-list :good-type="goods" ></goods-list>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ import NavBar from "@/components/NavBar";
 import Grid from "./children/grid"
 import tabBar from "./children/tabBar"
 import goodsList from "./children/GoodsList"
+import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
   name: "Home",
   components: {
@@ -33,33 +34,42 @@ export default {
     return {
       swiper:[],
       goodsType:"home_popular",  //切换标签栏
-      goods:[]
+      goods:[],
     };
   },
   methods: {
+     ...mapActions({
+       getTables:'home/getTables'
+     }),
+
    //切换tab标签
    tabClick(index){
        switch(index){
          case 0:
            this.goodsType="home_popular"   //流行
             this.getDoodsData(this.goodsType)
-           break;
+            this.getTables(this.goodsType) //把数据表名存储到vuex里，实现全局调用
+           break; 
            case 1:
               this.goodsType="home_news"  //新款
               this.getDoodsData(this.goodsType)
+               this.getTables(this.goodsType) //把数据表名存储到vuex里，实现全局调用
            break;
            case 2:
               this.goodsType="home_sell"   //精选
-               this.getDoodsData(this.goodsType)
+              this.getDoodsData(this.goodsType)
+               this.getTables(this.goodsType) //把数据表名存储到vuex里，实现全局调用 
              break;
        }
    },
      //获取切换栏商品数据
      getDoodsData(goodsType){
+         
+        this.getTables(goodsType)   //把数据表名存储到vuex里，实现全局调用    
         let query = new BaaS.Query()
         let Product = new BaaS.TableObject(goodsType)
         Product.setQuery(query).find().then(res => {
-            this.goods=res.data.objects
+            this.goods=res.data.objects        
         })
      },
 
@@ -77,9 +87,14 @@ export default {
   created() {
     this.carousel(); //轮播函数
     //请求商品数据
-    this.getDoodsData("home_popular")
-    this.getDoodsData("home_news")
-    this.getDoodsData("home_popular")
+   this.getDoodsData("home_popular")
+   // this.getDoodsData("home_news")
+   // this.getDoodsData("home_sell")
+  },
+  computed:{
+    // ...mapGetters({
+    //   tables:'home/tables',  //获取数据表名
+    // })
   }
 };
 </script>

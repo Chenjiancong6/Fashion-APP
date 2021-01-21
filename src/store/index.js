@@ -9,6 +9,7 @@ const AVATAR_KEY ="avatar"  //登录头像
 
 
 import home from "./home"  //首页
+import detail from "./detail"
 export default new Vuex.Store({
 
   //全局的state
@@ -40,7 +41,8 @@ export default new Vuex.Store({
   namespaced: true,
   //模块化,引入其他模块    
   modules: {
-    home
+    home,
+    detail
   },
 })
 
