@@ -1,7 +1,10 @@
 <template>
   <div id="detail">
     <nav-bar></nav-bar>
-    <detail-goods-info></detail-goods-info>
+    <detail-goods-info ></detail-goods-info>
+    <detail-express></detail-express>
+   <DetailShopInfo class="shopInfo"></DetailShopInfo>
+   <DetailButtonBar></DetailButtonBar>
   </div>
 </template>
 
@@ -9,12 +12,18 @@
 import BaaS from "@/api/cloud/init";
 import NavBar from "./children/NavBar";
 import DetailGoodsInfo from "./children/DetailGoodsInfo";
+import DetailExpress from "./children/DetailExpress";  //快递信息
+import DetailShopInfo from "./children/DetailShopInfo"  //店铺信息
+import DetailButtonBar from "./children/DetailButtonBar"
 import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
   name: "detail",
   components: {
     NavBar,
-    DetailGoodsInfo
+    DetailGoodsInfo,
+    DetailExpress,
+    DetailShopInfo,
+    DetailButtonBar
   },
   data() {
     return {
@@ -44,4 +53,8 @@ export default {
   background-color: #fff;
   height: 100vh;
 }
+.shopInfo{
+ /* bottom: 101px; */
+}
+
 </style>

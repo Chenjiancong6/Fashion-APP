@@ -72,8 +72,16 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .goods-list {
+  /* position: sticky;
+  top:50px; */
   margin-bottom: 51px;
+  height: calc(100vh - 50px);
+  overflow: scroll;
+}
+.van-tab__pane{
+  /* height: calc(100vh - 492px);
+  overflow: scroll; */
 }
 </style>

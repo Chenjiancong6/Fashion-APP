@@ -12,7 +12,7 @@
     <!-- Grid宫格 -->
     <grid></grid>
     <!--tab标签 -->
-     <tab-bar @tabClick="tabClick" :titles="['流行', '新款', '精选']"></tab-bar>
+     <tab-bar class="tab-bar" @tabClick="tabClick" :titles="['流行', '新款', '精选']"></tab-bar>
      <!--商品列表-->
      <goods-list :good-type="goods" ></goods-list>
   </div>
@@ -109,5 +109,8 @@ export default {
 .my-swipe img{
   width:100%;
   height:50%;
+}
+.tab-bar{
+  z-index: 999;
 }
 </style>

@@ -1,10 +1,12 @@
 <!--tab标签页-->
 <template>
   <div class="tab-bar">
+    <van-sticky :offset-top="0">
     <van-tabs v-model="active"  @click="itemClick(active)"   sticky animated swipeable>
       <van-tab v-for="(title,index) in titles" :key="index" 
        :title="title" :name="index"></van-tab>  
     </van-tabs>
+    </van-sticky>
   </div>
 </template>
 
@@ -36,5 +38,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+/* .tab-bar{
+position: sticky;
+} */
+
 </style>

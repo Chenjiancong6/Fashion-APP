@@ -54,6 +54,9 @@ import {
     Image as VanImage,
     Card,
     ImagePreview,
+    GoodsAction,
+    GoodsActionIcon,
+     GoodsActionButton 
    // Badge,
 } from "vant";
 
@@ -106,4 +109,7 @@ Vue.use(CheckboxGroup);
 Vue.use(Swipe);
 Vue.use(SwipeItem);
 Vue.use(ImagePreview);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionButton);
+Vue.use(GoodsActionIcon);
 //Vue.use(Badge);

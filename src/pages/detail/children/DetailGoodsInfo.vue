@@ -4,14 +4,14 @@
     <div class="title">{{goods.title}}</div>
     <div class="info-price">
       <span class="price">￥{{goods.price}}</span>
-      <span class="info-badge">大减价</span>
+      <span class="info-badge"><van-icon name="new-arrival-o" color="#1989fa"  size="30"/></span>
     </div>
     <div class="shopInfo">
       <div class="one">销量{{goods.sale}}</div>
       <div class="two">收藏{{goods.collection}}人</div>
       <div class="three">24小时内发货</div>
     </div>
-    <van-divider />
+    <van-divider/>
   </div>
 </template>
 
@@ -55,6 +55,7 @@ export default {
   display: flex;
   justify-content: space-between;
   color: #409EFF;
+  margin: 0 5px;
 }
 .title, .info-price, .shopInfo{
   margin-top: 1rem;
@@ -73,9 +74,9 @@ export default {
 }
 
 .info-badge{
- background-color: #409EFF;
- color:#fff;
- border-radius:15%;
+  /* background-color: #409EFF;
+  color:#fff;
+  border-radius:15%; */
  margin-left: 2rem;
 }
 </style>
