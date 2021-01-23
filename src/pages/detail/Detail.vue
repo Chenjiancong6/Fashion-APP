@@ -3,7 +3,7 @@
     <nav-bar></nav-bar>
     <detail-goods-info ></detail-goods-info>
     <detail-express></detail-express>
-   <DetailShopInfo class="shopInfo"></DetailShopInfo>
+   <DetailShopInfo></DetailShopInfo>
    <DetailButtonBar></DetailButtonBar>
   </div>
 </template>
@@ -14,7 +14,7 @@ import NavBar from "./children/NavBar";
 import DetailGoodsInfo from "./children/DetailGoodsInfo";
 import DetailExpress from "./children/DetailExpress";  //快递信息
 import DetailShopInfo from "./children/DetailShopInfo"  //店铺信息
-import DetailButtonBar from "./children/DetailButtonBar"
+import DetailButtonBar from "./children/DetailButtonBar" //底部按钮
 import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
   name: "detail",
@@ -53,8 +53,6 @@ export default {
   background-color: #fff;
   height: 100vh;
 }
-.shopInfo{
- /* bottom: 101px; */
-}
+
 
 </style>

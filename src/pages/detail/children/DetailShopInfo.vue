@@ -74,7 +74,7 @@ export default {
 
 <style scoped>
 #shopInfo{
-  margin-bottom: 101px; 
+  padding-bottom: 60px; 
 }
 .avater_info {
   margin-left: 10px;

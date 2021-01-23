@@ -56,7 +56,8 @@ import {
     ImagePreview,
     GoodsAction,
     GoodsActionIcon,
-     GoodsActionButton 
+    GoodsActionButton,
+     Sku 
    // Badge,
 } from "vant";
 
@@ -112,4 +113,5 @@ Vue.use(ImagePreview);
 Vue.use(GoodsAction);
 Vue.use(GoodsActionButton);
 Vue.use(GoodsActionIcon);
+Vue.use(Sku);
 //Vue.use(Badge);

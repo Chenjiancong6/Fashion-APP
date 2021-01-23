@@ -7,7 +7,7 @@
       <span class="info-badge"><van-icon name="new-arrival-o" color="#1989fa"  size="30"/></span>
     </div>
     <div class="shopInfo">
-      <div class="one">销量{{goods.sale}}</div>
+      <div class="one">月销量{{goods.sale}}</div>
       <div class="two">收藏{{goods.collection}}人</div>
       <div class="three">24小时内发货</div>
     </div>
