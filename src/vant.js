@@ -57,6 +57,8 @@ import {
     GoodsAction,
     GoodsActionIcon,
     GoodsActionButton,
+    Sidebar,
+    SidebarItem,
      Sku 
    // Badge,
 } from "vant";
@@ -114,4 +116,6 @@ Vue.use(GoodsAction);
 Vue.use(GoodsActionButton);
 Vue.use(GoodsActionIcon);
 Vue.use(Sku);
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
 //Vue.use(Badge);

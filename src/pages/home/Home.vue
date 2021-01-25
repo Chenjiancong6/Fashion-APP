@@ -23,7 +23,7 @@ import BaaS from "@/api/cloud/init";
 import NavBar from "@/components/NavBar";
 import Grid from "./children/grid"
 import tabBar from "./children/tabBar"
-import goodsList from "./children/GoodsList"
+import goodsList from "@/components/GoodsList"
 import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
   name: "Home",

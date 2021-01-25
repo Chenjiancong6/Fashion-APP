@@ -4,7 +4,10 @@
     <div class="title">{{goods.title}}</div>
     <div class="info-price">
       <span class="price">￥{{goods.price}}</span>
-      <span class="info-badge"><van-icon name="new-arrival-o" color="#1989fa"  size="30"/></span>
+       <span class="info-badge"><!--<van-icon name="new-arrival-o" color="#1989fa"  size="30"/> -->
+      <van-tag type="primary">新品</van-tag>
+      </span>
+      <span style="margin-left:5px"><van-tag type="success">聚划算</van-tag></span>
     </div>
     <div class="shopInfo">
       <div class="one">月销量{{goods.sale}}</div>

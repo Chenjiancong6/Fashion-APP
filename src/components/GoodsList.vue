@@ -1,3 +1,6 @@
+<!--
+--商品列表 (公共组件)
+-->
 <template>
   <div class="goods-list">
     <van-card
@@ -77,11 +80,11 @@ export default {
   /* position: sticky;
   top:50px; */
   margin-bottom: 51px;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 94px);
   overflow: scroll;
 }
-.van-tab__pane{
-  /* height: calc(100vh - 492px);
-  overflow: scroll; */
-}
+/* .van-tab__pane{
+height: calc(100vh - 492px);
+  overflow: scroll;
+} */
 </style>
