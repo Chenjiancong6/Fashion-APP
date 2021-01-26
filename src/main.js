@@ -2,14 +2,18 @@ import Vue from "vue";
 import router from './config/router' //路由
 import store from './store' //vuex
 import App from './App'
-import vant from "./vant"  //有赞组件,按需引用，封装在另外一个文件夹
+import * as Vant from "./vant"  //有赞组件,按需引用，封装在另外一个文件夹
 import cloudApi from './api/cloud/cloudApi' //全局挂载知晓云api
 import { Toast } from 'vant';
 
+//  import Vant from 'vant';
+//  import 'vant/lib/index.css';
+
+//  Vue.use(Vant);
 
 Vue.config.productionTip = false
  
-Vue.prototype.$vant=vant
+Vue.prototype.$vant=Vant
 
 Vue.prototype.$Toast = Toast
 

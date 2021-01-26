@@ -58,11 +58,13 @@ import {
     GoodsActionIcon,
     GoodsActionButton,
     Sidebar,
-    SidebarItem,
+  SidebarItem,
+  SubmitBar,
      Sku 
    // Badge,
 } from "vant";
 
+Vue.use(SubmitBar);
 Vue.use(Card);
 Vue.use(VanImage);
 Vue.use(TreeSelect);
