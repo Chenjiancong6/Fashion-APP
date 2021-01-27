@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <nav-bar>
+    <nav-bar class="nav_bar">
       <div slot="center">潮流街APP</div>
     </nav-bar>
     <!-- 轮播组件 -->
@@ -112,5 +112,8 @@ export default {
 }
 .tab-bar{
   z-index: 999;
+}
+.nav_bar{
+  position: static;
 }
 </style>

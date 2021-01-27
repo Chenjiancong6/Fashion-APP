@@ -11,10 +11,10 @@
             round
             width="3rem"
             height="3rem"
-            src="https://cloud-minapp-37413.cloud.ifanrusercontent.com/1l3DB3gp0OYNBDZg.jpg"
+            :src="$store.state.avatar"
           />
         </span>
-        <span class="avater_name">超级大哈克</span>
+        <span class="avater_name">{{$store.state.nickname}}</span>
       </div>
       <div class="setting">
         <van-icon @click="onClickSetting" name="setting-o" size="25" />
@@ -43,10 +43,13 @@
 </template>
 
 <script>
+import store from "@/store/index";  //引入vuex
 export default {
   name: "HeadLogin",
   data() {
-    return {};
+    return {
+
+    };
   },
   methods: {
     //子组件向父组件传递点击事件

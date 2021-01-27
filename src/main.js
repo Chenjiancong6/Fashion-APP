@@ -6,10 +6,6 @@ import * as Vant from "./vant"  //有赞组件,按需引用，封装在另外一
 import cloudApi from './api/cloud/cloudApi' //全局挂载知晓云api
 import { Toast } from 'vant';
 
-//  import Vant from 'vant';
-//  import 'vant/lib/index.css';
-
-//  Vue.use(Vant);
 
 Vue.config.productionTip = false
  

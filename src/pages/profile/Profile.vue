@@ -21,7 +21,7 @@ export default {
 <style scoped>
 #Profile{
   background-color: rgba(243, 243, 243, 0.945);
-  height: 100000px;
+  height: 100vh;
 }
 .headLogin{
 background-color: rgb(235, 70, 59);

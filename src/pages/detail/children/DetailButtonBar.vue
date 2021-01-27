@@ -101,6 +101,8 @@ export default {
     onBuyClicked(index) {
       //index: 获取已选商品参数
       console.log(index);
+      this.$toast('加入购物车成功')
+      this.show=false
     },
 
     //跳转购物车页面

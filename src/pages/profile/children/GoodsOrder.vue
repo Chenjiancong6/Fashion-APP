@@ -11,19 +11,19 @@
    <!-- 订单状态信息 -->
    <div id="OrderInfo">
    <div>
-       <div class="Order_icon"><van-icon size="25" name="wechat" color="#1989fa"/></div>
+       <div class="Order_icon"><van-icon  badge="9" size="25" name="wechat" color="#1989fa"/></div>
        <div>待付款</div>
    </div>
    <div>
-       <div class="Order_icon"><van-icon size="25" name="todo-list" color="#1989fa"/></div>
+       <div class="Order_icon"><van-icon  badge="1" size="25" name="todo-list" color="#1989fa"/></div>
        <div>待发货</div>
    </div>
    <div>
-       <div class="Order_icon"><van-icon size="25" name="cart-circle" color="#1989fa"/></div>
+       <div class="Order_icon"><van-icon  badge="6" size="25" name="cart-circle" color="#1989fa"/></div>
        <div>待收货</div>
    </div>
    <div>
-       <div class="Order_icon"><van-icon size="25" name="comment" color="#1989fa"/></div>
+       <div class="Order_icon"><van-icon  badge="233" size="25" name="comment" color="#1989fa"/></div>
        <div>评价</div>
    </div>
    <div>

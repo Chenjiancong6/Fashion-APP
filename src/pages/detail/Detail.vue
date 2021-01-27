@@ -1,10 +1,12 @@
 <template>
   <div id="detail">
-    <nav-bar></nav-bar>
+    <nav-bar class="nav_bar"></nav-bar>
+    <div class="scorlls">
     <detail-goods-info ></detail-goods-info>
     <detail-express></detail-express>
    <DetailShopInfo></DetailShopInfo>
    <DetailButtonBar></DetailButtonBar>
+   </div>
   </div>
 </template>
 
@@ -53,6 +55,12 @@ export default {
   background-color: #fff;
   height: 100vh;
 }
-
+.nav_bar{
+  position: static;
+}
+.scorlls{
+  height: calc(100vh - 96px);
+overflow: scroll;
+}
 
 </style>
