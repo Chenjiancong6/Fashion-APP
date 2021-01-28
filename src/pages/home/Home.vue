@@ -63,8 +63,7 @@ export default {
        }
    },
      //获取切换栏商品数据
-     getDoodsData(goodsType){
-         
+     getDoodsData(goodsType){       
         this.getTables(goodsType)   //把数据表名存储到vuex里，实现全局调用    
         let query = new BaaS.Query()
         let Product = new BaaS.TableObject(goodsType)

@@ -28,13 +28,13 @@ export default {
   methods:{
     //监听切换导航项时的事件
     onChange(index){
-    console.log(index);
     //把当前导航项通过子组件传递给父组件
      this.$emit("tabClick",index)
     },
+    
     //当前的导航项内容 
     onClick(index){
-         console.log(index,22);
+       //  console.log(index,22);
     }
   }
 };

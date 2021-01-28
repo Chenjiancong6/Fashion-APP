@@ -1,6 +1,6 @@
 <template>
   <div id="DetailGoodsInfo">
-    <van-image class="imgage" @click="clickImage" :src="goods.path" alt="图片资源加载失败" />
+    <van-image class="imgage" @click="clickImage" :src="goods.path"  width="375" height="210" alt="图片资源加载失败" />
     <div class="title">{{goods.title}}</div>
     <div class="info-price">
       <span class="price">￥{{goods.price}}</span>

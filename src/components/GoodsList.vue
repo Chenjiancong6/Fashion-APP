@@ -44,7 +44,10 @@ export default {
     ...mapActions({
       getGoods: "detail/getGoods"
     }),
-    //点击进入详情页
+    
+    /**
+     * 点击进入详情页   (触发点击事件)
+     */
     enterDetail(index) {
       //获取点击对应数据表的iid
       const id = this.goodType[index].id;
