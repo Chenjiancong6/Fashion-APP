@@ -95,7 +95,7 @@ router.beforeEach((to, from, next) => {
     const auth = to.meta && to.meta.auth //将要跳转的页面
     if (auth) {
         //先判断是否有登录缓存
-        if (getItem("user")) {
+        if (getItem("userId")) {
             //符合继续进行
             next()
            // next({path:'/'});  //不起作用？

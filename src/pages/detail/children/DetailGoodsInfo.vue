@@ -1,20 +1,29 @@
 <template>
   <div id="DetailGoodsInfo">
-    <van-image class="imgage" @click="clickImage" :src="goods.path"  width="375" height="210" alt="图片资源加载失败" />
+    <van-image
+      class="imgage"
+      @click="clickImage"
+      :src="goods.path"
+      height="210"
+      alt="图片资源加载失败"
+    />
     <div class="title">{{goods.title}}</div>
     <div class="info-price">
       <span class="price">￥{{goods.price}}</span>
-       <span class="info-badge"><!--<van-icon name="new-arrival-o" color="#1989fa"  size="30"/> -->
-      <van-tag type="primary">新品</van-tag>
+      <span class="info-badge">
+        <!--<van-icon name="new-arrival-o" color="#1989fa"  size="30"/> -->
+        <van-tag type="primary">新品</van-tag>
       </span>
-      <span style="margin-left:5px"><van-tag type="success">聚划算</van-tag></span>
+      <span style="margin-left:5px">
+        <van-tag type="success">聚划算</van-tag>
+      </span>
     </div>
     <div class="shopInfo">
       <div class="one">月销量{{goods.sale}}</div>
       <div class="two">收藏{{goods.collection}}人</div>
       <div class="three">24小时内发货</div>
     </div>
-    <van-divider/>
+    <van-divider />
   </div>
 </template>
 
@@ -24,7 +33,7 @@ import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
   name: "DetailGoodsInfo",
   components: {},
-  props:{
+  props: {
     // goods:{
     //   type:Object,
     //   default(){
@@ -35,7 +44,7 @@ export default {
   data() {
     return {};
   },
-  methods: { 
+  methods: {
     //图片预览
     clickImage() {
       ImagePreview({
@@ -44,42 +53,44 @@ export default {
       });
     }
   },
-  created(){},
-   computed:{
+  created() {},
+  computed: {
     ...mapGetters({
-      goods:'detail/goods',  //在vuex获取详情页数据
+      goods: "detail/goods" //在vuex获取详情页数据
     })
   }
 };
 </script>
 
 <style scoped>
-.shopInfo{
+.shopInfo {
   display: flex;
   justify-content: space-between;
-  color: #409EFF;
+  color: #409eff;
   margin: 0 5px;
 }
-.title, .info-price, .shopInfo{
+.title,
+.info-price,
+.shopInfo {
   margin-top: 1rem;
 }
-.title{
+.title {
   margin-left: 10px;
-  color:#409EFF;
+  color: #409eff;
 }
-.info-price{
-   margin-left: 10px;
+.info-price {
+  margin-left: 10px;
 }
-.info-price .price{
+.info-price .price {
   font-size: 26px;
   color: rgb(231, 15, 15);
   font-weight: bold;
 }
 
-.info-badge{
+.info-badge {
   /* background-color: #409EFF;
   color:#fff;
   border-radius:15%; */
- margin-left: 2rem;
+  margin-left: 2rem;
 }
 </style>

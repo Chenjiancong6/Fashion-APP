@@ -14,7 +14,7 @@
             :src="$store.state.avatar"
           />
         </span>
-        <span class="avater_name">{{$store.state.nickname}}</span>
+        <span class="avater_name">{{$store.state.user}}</span>
       </div>
       <div class="setting">
         <van-icon @click="onClickSetting" name="setting-o" size="25" />

@@ -6,11 +6,13 @@ import register from './register'
 import login from './login'
 import request from '../request'
 import { queryImage, queryData} from "../API/queryAPI"
+import { writeTableData } from "../API/writeTableData"
  
 export default {
     register,
     request,
     login,
     queryImage,
-    queryData
+    queryData,
+    writeTableData
 }

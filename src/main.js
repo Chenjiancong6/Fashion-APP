@@ -13,7 +13,7 @@ Vue.prototype.$vant=Vant
 
 Vue.prototype.$Toast = Toast
 
-Vue.prototype.$cloudApi = cloudApi
+Vue.prototype.$cloudApi = cloudApi  //接口API
 
 const app = new Vue({
   router,

@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { setItem, getItem } from "@/components/storage" //封装缓存的方法
 import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
   name: "DetailButtonBar",
@@ -100,7 +101,20 @@ export default {
     //确认按钮
     onBuyClicked(index) {
       //index: 获取已选商品参数
-      console.log(index);
+     // console.log(index);
+    
+      let parma={
+        userId:(getItem("userId")).toString(),   //写入当前登录用户的Id号
+        shop:this.goods.shop,   //店铺名称
+        selectedNum:index.selectedNum,     //加入购物车的商品数
+        path:this.sku.tree[0].v[0].imgUrl,  //图片路径
+        title: this.sku.tree[0].v[0].name,  //商品描述
+        price:this.sku.list[0].price,      //价格
+      }
+     
+     //写入数据表
+     this.$cloudApi.writeTableData("shop_cart",parma)
+      
       this.$toast('加入购物车成功')
       this.show=false
     },

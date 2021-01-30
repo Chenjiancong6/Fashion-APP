@@ -91,9 +91,7 @@ export default {
    // this.getDoodsData("home_sell")
   },
   computed:{
-    // ...mapGetters({
-    //   tables:'home/tables',  //获取数据表名
-    // })
+   
   }
 };
 </script>
