@@ -13,72 +13,83 @@ const home = () => import("@/pages/home/Home") //首页
 const category = () => import("@/pages/category/Category")
 const shopCart = () => import("@/pages/shopCart/ShopCart")
 const profile = () => import("@/pages/profile/Profile")
-const detail=()=>import("@/pages/detail/Detail")  // 详情页
+const detail = () => import("@/pages/detail/Detail")  // 详情页
+const setting = () => import("@/pages/profile/setting")  //设置
 
 
 
 const routes = [{
-        path: '/',
-        redirect: '/home' //重定向， 默认显示
-    },
-    {
-        name: "login",
-        path: "/login",
-        component: signIn,
-        meta: {
-            title: "账号登录",
-        }
-    },
-    {
-        name: 'home',
-        path: '/home',
-        component: home,
-        meta: {
-            title: '首页',
-            //登录权限
-            auth: true
-        }
-    },
-     {
-         name: 'category',
-         path: '/category',
-         component: category,
-         meta: {
-             title: '分类',
-             //登录权限
-             auth: true
-         }
-     },
-      {
-          name: 'shopCart',
-          path: '/shopCart',
-          component: shopCart,
-          meta: {
-              title: '购物车',
-              //登录权限
-              auth: true
-          }
-      },
-       {
-           name: 'profile',
-           path: '/profile',
-           component: profile,
-           meta: {
-               title: '我的',
-               //登录权限
-               auth: true
-           }
-       },
-    {
-        name: 'detail',
-        path: '/detail',
-        component: detail,
-        meta: {
-            title: '详情',
-            //登录权限
-            auth: true
-        }
-    },
+    path: '/',
+    redirect: '/home' //重定向， 默认显示
+},
+{
+    name: "login",
+    path: "/login",
+    component: signIn,
+    meta: {
+        title: "账号登录",
+    }
+},
+{
+    name: 'home',
+    path: '/home',
+    component: home,
+    meta: {
+        title: '首页',
+        //登录权限
+        auth: true
+    }
+},
+{
+    name: 'category',
+    path: '/category',
+    component: category,
+    meta: {
+        title: '分类',
+        //登录权限
+        auth: true
+    }
+},
+{
+    name: 'shopCart',
+    path: '/shopCart',
+    component: shopCart,
+    meta: {
+        title: '购物车',
+        //登录权限
+        auth: true
+    }
+},
+{
+    name: 'profile',
+    path: '/profile',
+    component: profile,
+    meta: {
+        title: '我的',
+        //登录权限
+        auth: true
+    }
+},
+{
+    name: 'setting',
+    path: '/setting',
+    component: setting,
+    meta: {
+        title: '设置',
+        //登录权限
+        auth: true
+    }
+},
+{
+    name: 'detail',
+    path: '/detail',
+    component: detail,
+    meta: {
+        title: '详情',
+        //登录权限
+        auth: true
+    }
+},
 ]
 
 //挂载router路由
@@ -94,15 +105,16 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     const auth = to.meta && to.meta.auth //将要跳转的页面
     if (auth) {
+        document.title = "潮流街APP"
         //先判断是否有登录缓存
         if (getItem("userId")) {
             //符合继续进行
             next()
-           // next({path:'/'});  //不起作用？
+            // next({path:'/'});  //不起作用？
         } else {
             //不符合跳转登录界面
             Toast("请先登录")
-            next({path: '/login'})
+            next({ path: '/login' })
         }
     } else {
         next();

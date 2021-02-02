@@ -1,9 +1,10 @@
 <!--vue入口文件-->
 <template>
   <div id="app">
-  <keep-alive exclude="Detail">
+  <!-- <keep-alive exclude="Detail">
       <router-view></router-view>
-    </keep-alive>
+    </keep-alive> -->
+    <router-view></router-view>
  <tab-bar></tab-bar>
   </div> 
  

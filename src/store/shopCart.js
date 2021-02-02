@@ -4,7 +4,7 @@
 
 
 const state = {
-    cartNumber: '' //购物车商品数量
+    cartNumber: '' //加入购物车商品数量
 }
 
 const getters = {

@@ -52,9 +52,9 @@ export default {
     };
   },
   methods: {
-    //子组件向父组件传递点击事件
     onClickSetting() {
-      // this.$emit();
+     this.$router.push({path:'/setting'})  //路由跳转
+      
     }
   }
 };

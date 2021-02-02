@@ -2,7 +2,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { setItem, getItem } from "@/components/storage"  //数据获取，存储，移除封装
+
 Vue.use(Vuex)
+
 const USER_KEY = "user"  //登录用户名
 const NICKNAME_KEY="nickname"  //登录昵称
 const AVATAR_KEY ="avatar"  //登录头像
